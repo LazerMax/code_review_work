@@ -6,21 +6,21 @@ class CalculatorTest {
 
     @Test
     void add() {
-        Calculator calc = new Calculator();
-        assertEquals(2, calc.add(1,1));
+        Calculator calculator = new Calculator();
+        assertEquals(2, calculator.add(1,1));
     }
 
     @Test
     void dif() {
-        Calculator calc = new Calculator();
-        assertEquals(0, calc.dif(1,1));
+        Calculator calculator = new Calculator();
+        assertEquals(0, calculator.dif(1,1));
     }
 
     @Test
     void div() {
-        Calculator calc = new Calculator();
+        Calculator calculator = new Calculator();
         try {
-            assertEquals(5, calc.div(10,2));
+            assertEquals(5, calculator.div(10,2));
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -28,13 +28,13 @@ class CalculatorTest {
 
     @Test
     void times() {
-        Calculator calc = new Calculator();
-        assertEquals(6, calc.times(2,3));
+        Calculator calculator = new Calculator();
+        assertEquals(6, calculator.times(2,3));
     }
 
     @Test
     void solver() {
-        Calculator calc = new Calculator();
-        assertEquals(8, calc.solver());
+        Calculator calculator = new Calculator();
+        assertEquals(8, calculator.solver());
     }
 }
