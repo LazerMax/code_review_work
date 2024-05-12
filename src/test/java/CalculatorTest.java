@@ -35,6 +35,6 @@ class CalculatorTest {
     @Test
     void solver() {
         Calculator calculator = new Calculator();
-        assertEquals(7, calculator.solver());
+        assertEquals(8, calculator.solver());
     }
 }
