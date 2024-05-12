@@ -13,5 +13,6 @@ public class Calculator {
     }
     public int solver(){
         return add(5, 3);
+
     }
 }
