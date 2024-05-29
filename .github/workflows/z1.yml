@@ -1,23 +1,26 @@
 name: Java CI
 
-on: [push]
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [main]
 
 jobs:
   build:
-
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
 
     steps:
       - uses: actions/checkout@v2
-
-      - name: Set up JDK 11
+      - name: Set up JDK ${{ matrix.java }}
         uses: actions/checkout@v2
         with:
+          java-version: ${{ matrix.java }}
           distribution: 'adopt'
-          java-version: '11'
 
-      - name: Build with Maven
-        run: mvn -B package --file pom.xml
-
-      - name: Run test
-        run: mvn test
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
+      - name: Build with Gradle
+        run: ./gradlew build
+      - name: Test
+        run: ./gradlew test
